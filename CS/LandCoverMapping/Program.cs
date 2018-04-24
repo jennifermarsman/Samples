@@ -59,7 +59,7 @@ namespace LandCoverMapping
 
                 using (ByteArrayContent content = new ByteArrayContent(byteData))
                 {
-                    content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+                    content.Headers.ContentType = new MediaTypeHeaderValue("image/tiff");
 
                     // Call the AI for Earth API
                     response = await client.PostAsync(uri, content);

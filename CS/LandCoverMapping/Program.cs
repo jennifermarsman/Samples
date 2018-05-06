@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace LandCoverMapping
@@ -14,7 +11,12 @@ namespace LandCoverMapping
     static class Program
     {
         // Subscription Key for Land Cover Mapping
-        const string subscriptionKey = "38013f01432e404d84b731ee168e2185";
+        #region Hiding subscription key :)
+        // Request an AI for Earth subscription key by emailing aiforearthapi@microsoft.com with 
+        // details of your use case, geographic area of interest, anticipated number of calls per
+        // unit time, and if you are willing to provide us feedback to improve the API
+        const string subscriptionKey = "<your key here>";
+        #endregion
         const string uriBase = "https://aiforearth.azure-api.net/v0.1/landcover/details";
 
 
@@ -82,7 +84,7 @@ namespace LandCoverMapping
             }
             catch (Exception e)
             {
-                
+                Console.WriteLine("Error: " + e.ToString());                
             }
 
         }
